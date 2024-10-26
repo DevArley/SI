@@ -4,11 +4,11 @@ FROM tomcat:8.5-jdk8
 WORKDIR /usr/local/tomcat/webapps/
 
 # Copiar la carpeta SI y su contenido
-COPY ./SI /usr/local/tomcat/webapps/SI/
+COPY ./SI1.4.2 /usr/local/tomcat/webapps/SI1.4.2/
 
 # Copiar el conector de MySQL y JSTL a la carpeta de librerías de Tomcat
-COPY ./SI/WEB-INF/lib/mysql-connector-java-1.9.0.jar /usr/local/tomcat/lib/
-COPY ./SI/WEB-INF/lib/jstl-1.2.jar /usr/local/tomcat/lib/  
+COPY ./SI1.4.2/WEB-INF/lib/mysql-connector-java-1.9.0.jar /usr/local/tomcat/lib/
+COPY ./SI1.4.2/WEB-INF/lib/jstl-1.2.jar /usr/local/tomcat/lib/  
 
 # Exponer el puerto 8080
 EXPOSE 8080
