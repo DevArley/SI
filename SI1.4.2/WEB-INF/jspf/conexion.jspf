@@ -1,0 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> 
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %> 
+<sql:setDataSource 
+    var="conexionSI" 
+    driver="com.mysql.jdbc.Driver" 
+    url="jdbc:mysql://sql5.freesqldatabase.com:3306/sql5740973"
+    user="sql5740973"
+    password="aiqnHPV1qa"
+/>

@@ -1,0 +1,391 @@
+
+header {
+    background: rgb(0, 0, 0);
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: grey;
+}
+
+
+
+main {
+    display: flex;
+    min-height: calc(100vh - 100px);
+}
+
+.background-image {
+    flex: 1;
+    background-image: url('../../img/1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.content {
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 1.8em;
+}
+
+.login-form {
+    flex: 0 0 400px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    color: #fff;
+}
+
+.login-form h3 {
+    margin-top: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input {
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.btn {
+    margin-top: 20px;
+    padding: 10px 20px; /* Aumentar el padding horizontal para un botón más ancho */
+    background-color: #0066cc; /* Color de fondo inicial */
+    color: #fff; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+    text-decoration: none; /* Sin subrayado */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+}
+
+/* Efecto de hover */
+.btn:hover {
+    background-color: #00a6ff; /* Color de fondo al pasar el mouse */
+    color: #000; /* Cambiar el color del texto al pasar el mouse */
+    transform: translateY(-3px); /* Mover el botón hacia arriba */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra al pasar el mouse */
+}
+
+/* Efecto de enfoque */
+.btn:focus {
+    outline: none; /* Eliminar el contorno por defecto */
+    box-shadow: 0 0 5px rgba(0, 102, 204, 0.5); /* Sombra al enfocar */
+}
+
+.alternative-login {
+    margin-top: 20px;
+}
+
+a {
+    color: #4db8ff;
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+}
+
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-info a, .additional-links a {
+    color: #4db8ff;
+}
+
+
+/* Estilo general del modal */
+.modal {
+    backdrop-filter: blur(5px);
+}
+
+/* Eliminar fondo negro del backdrop */
+.modal-backdrop {
+    background-color: transparent;
+}
+
+/* Agregar efecto de desenfoque al contenido detrás del modal */
+.modal-backdrop {
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Estilo del contenido del modal */
+.modal-content {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Estilo del encabezado del modal */
+.modal-header {
+    background-color: #5e5e5e;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Estilo del título del modal */
+.modal-title {
+    font-weight: bold;
+}
+
+/* Estilo del cuerpo del modal */
+.modal-body {
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+/* Estilo de las tarjetas */
+.card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+/* Efecto al pasar el mouse sobre las tarjetas */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo del botón */
+.btn-primary {
+    background-color: #166500;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+/* Efecto al pasar el mouse sobre el botón */
+.btn-primary:hover {
+    background-color: #00ff11;
+}
+.btn-secondary {
+    background-color: #110f2c;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+
+
+.btn-warning {
+    background-color: #ffcc00; /* Color de fondo inicial */
+    color: #000; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+    position: absolute; /* Posicionamiento absoluto */
+    right: 20px; /* Distancia desde el lado derecho de la pantalla */
+    top: 20px; /* Distancia desde el lado superior de la pantalla */
+}
+
+.btn-warning:hover {
+    background-color: #a30a0a; /* Color de fondo al pasar el mouse */
+}
+
+.btn-danger {
+    background-color: #ff9500; /* Color de fondo inicial */
+    color: #000; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+}
+
+.btn-danger:hover {
+    background-color: #ff3333; /* Color de fondo al pasar el mouse */
+}
+
+
+/* Efecto al pasar el mouse sobre el botón */
+.btn-secondary:hover {
+    background-color: #00a6ff;
+}
+
+/* Estilo del botón de cerrar */
+.close {
+    color: white;
+    font-size: 1.5rem;
+}
+
+/* Efecto de aparición del modal */
+.fade {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.fade.show {
+    opacity: 1;
+}
+
+
+
+
+    /* Estilo general para los inputs */
+.info {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    padding: 10px; /* Espaciado interno */
+    border: 2px solid #007bff; /* Borde azul */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+    outline: none; /* Eliminar el contorno por defecto */
+}
+
+/* Efecto de hover */
+.info:hover {
+    border-color: #0056b3; /* Cambia el color del borde al pasar el mouse */
+}
+
+/* Efecto al enfocar el input */
+.info:focus {
+    border-color: #0056b3; /* Color del borde al enfocar */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra al enfocar */
+}
+
+/* Estilo para el placeholder */
+.info::placeholder {
+    color: #999; /* Color del texto del placeholder */
+    opacity: 1; /* Asegura que el color se muestre correctamente en todos los navegadores */
+    transition: color 0.3s ease; /* Transición suave para el color */
+}
+
+/* Cambiar color del placeholder al enfocar el input */
+.info:focus::placeholder {
+    color: #007bff; /* Cambiar color del placeholder al enfocar */
+}
+
+
+
+.centered-form {
+    background: linear-gradient(135deg, #2c3e50, #34495e); /* Degradado de colores oscuros */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+    color: white; /* Color del texto */
+}
+
+
+
+
+/* tablas con cardbody */
+/* Estilo general para centrar la tarjeta */
+.card-body {
+   /* Ancho máximo de la tarjeta */
+    margin: 20px auto; /* Centramos la tarjeta horizontalmente */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background-color: #d7d7d7; /* Color de fondo blanco */
+}
+
+
+
+
+
+/* Estilo para el botón "Nuevo Usuario" */
+.buton {
+    background-color: #007bff; /* Color de fondo azul */
+    color: #ffffff; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+    transition: background-color 0.3s ease; /* Transición suave */
+    text-decoration: none; /* Sin subrayado */
+    display: inline-block; /* Para que el padding funcione correctamente */
+    margin-top: 20px; /* Espacio superior */
+}
+
+.buton:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el mouse */
+}
+
+/* Estilo para la tabla */
+.table {
+    width: 100%; /* Ancho completo */
+    border-collapse: collapse; /* Colapsar bordes */
+}
+
+.table th, .table td {
+    padding: 12px; /* Espaciado interno */
+    text-align: left; /* Alinear texto a la izquierda */
+    border-bottom: 1px solid #ddd; /* Línea inferior */
+}
+
+.table th {
+    background-color: #343a40; /* Color de fondo del encabezado */
+    color: white; /* Color del texto del encabezado */
+}
+
+.table tr:hover {
+    background-color: #f1f1f1; /* Color de fondo al pasar el mouse sobre la fila */
+}
+
+.table-responsive {
+    overflow-x: auto; /* Habilitar desplazamiento horizontal si es necesario */
+}
+
+.col-md-69{
+    width: 2050px;
+}
+
+p.user-name {
+    color: white !important;
+    display: inline-block !important;
+    margin-right: 10px !important;
+  }
+  
+  .logout-btn {
+    display: inline-block;
+  }
