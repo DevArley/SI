@@ -2,9 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 
-<sql:setDataSource var="conexionSI" driver="com.mysql.jdbc.Driver"
-    url="jdbc:mysql://localhost/proyectos"
-    user="root" password="" />
 
 <c:if test="${not empty param.id_proyecto and not empty param.estado_director}">
     <sql:update dataSource="${conexionSI}">
