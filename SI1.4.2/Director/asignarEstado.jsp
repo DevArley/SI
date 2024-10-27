@@ -4,7 +4,7 @@
 <%@ include file="../WEB-INF/jspf/conexion.jspf" %>
 
 <c:if test="${not empty param.id_proyecto and not empty param.estado_director}">
-    <sql:update scope="request" dataSource="${conexionSI}">
+    <sql:update  dataSource="${conexionSI}">
         UPDATE proyecto SET estado_director = ? WHERE id = ?
         <sql:param value="${param.estado_director}" />
         <sql:param value="${param.id_proyecto}" />
