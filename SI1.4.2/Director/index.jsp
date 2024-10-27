@@ -155,7 +155,7 @@
         user="root" password="" />
 
     <!-- Fetch director's ID using email from session -->
-    <sql:query var="directorResult" dataSource="${conexionSI}">
+    <sql:query var="directorResult" scope="request" dataSource="${conexionSI}">
         SELECT id FROM usuarios WHERE email = ?
         <sql:param value="${sessionScope.email}" />
     </sql:query>
