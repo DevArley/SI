@@ -113,6 +113,20 @@
                                     <a href="../log/logout.jsp" class="btn btn-warning btn-sm logout-btn">Logout</a>
                                 </div>
                             </header>
+    <!-- Fetch director's ID using email from session -->
+<sql:query var="directorResult" dataSource="${conexionSI}">
+    SELECT id FROM usuarios WHERE email = ?
+    <sql:param value="${sessionScope.email}" />
+</sql:query>
+<c:set var="directorId" value="${directorResult.rows[0].id}" scope="session" />
+
+<!-- SQL query to fetch projects without a calificacion for the current director -->
+<sql:query var="proyectosSinCalificar" dataSource="${conexionSI}">
+    SELECT id, titulo 
+    FROM proyecto 
+    WHERE id_director = ? AND id_calificacion IS NULL
+    <sql:param value="${directorId}" />
+</sql:query>
 
 
                             <div class="container-fluid">
@@ -150,9 +164,7 @@
 
 
                                     
- <sql:setDataSource var="conexionSI" driver="com.mysql.jdbc.Driver"
-        url="jdbc:mysql://localhost/proyectos"
-        user="root" password="" />
+
 
     <!-- Fetch director's ID using email from session -->
     <sql:query var="directorResult" scope="request" dataSource="${conexionSI}">
@@ -277,20 +289,6 @@
         </a>
     </div>
 
-    <!-- Fetch director's ID using email from session -->
-<sql:query var="directorResult" dataSource="${conexionSI}">
-    SELECT id FROM usuarios WHERE email = ?
-    <sql:param value="${sessionScope.email}" />
-</sql:query>
-<c:set var="directorId" value="${directorResult.rows[0].id}" scope="session" />
-
-<!-- SQL query to fetch projects without a calificacion for the current director -->
-<sql:query var="proyectosSinCalificar" dataSource="${conexionSI}">
-    SELECT id, titulo 
-    FROM proyecto 
-    WHERE id_director = ? AND id_calificacion IS NULL
-    <sql:param value="${directorId}" />
-</sql:query>
 
 
 
