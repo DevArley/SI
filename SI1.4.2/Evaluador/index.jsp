@@ -107,6 +107,22 @@
                                 </div>
                             </header>
 
+<!-- Fetch director's ID using email from session -->
+<sql:query var="directorResult" dataSource="${conexionSI}">
+    SELECT id FROM usuarios WHERE email = ?
+    <sql:param value="${sessionScope.email}" />
+</sql:query>
+<c:set var="evaluadorId" value="${directorResult.rows[0].id}" scope="session" />
+
+<!-- Query to get projects for the current director -->
+<sql:query var="result" scope="request" dataSource="${conexionSI}">
+    SELECT id, titulo, descripcion, url, estado_evaluador, id_estudiante1, id_estudiante2, id_evaluador, fecha_creacion, estado 
+    FROM proyecto
+    WHERE estado_director='calificado' AND  id_evaluador = ?
+    <sql:param value="${evaluadorId}" />
+</sql:query>
+
+
     <div class="container-fluid">
         <!-- Menú lateral -->
         <div class="sidebar">
@@ -173,21 +189,6 @@
         </div>
         </div>
    
-<!-- Fetch director's ID using email from session -->
-<sql:query var="directorResult" dataSource="${conexionSI}">
-    SELECT id FROM usuarios WHERE email = ?
-    <sql:param value="${sessionScope.email}" />
-</sql:query>
-<c:set var="evaluadorId" value="${directorResult.rows[0].id}" scope="session" />
-
-<!-- Query to get projects for the current director -->
-<sql:query var="result" scope="request" dataSource="${conexionSI}">
-    SELECT id, titulo, descripcion, url, estado_evaluador, id_estudiante1, id_estudiante2, id_evaluador, fecha_creacion, estado 
-    FROM proyecto
-    WHERE estado_director='calificado' AND  id_evaluador = ?
-    <sql:param value="${evaluadorId}" />
-</sql:query>
-
 
     
 <div class="container">
