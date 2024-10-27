@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
-
+<%@ include file="../WEB-INF/jspf/conexion.jspf" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,9 +9,7 @@
     <title>Procesar Calificación</title>
 </head>
 <body>
-    <sql:setDataSource var="conexionSI" driver="com.mysql.jdbc.Driver"
-        url="jdbc:mysql://localhost/proyectos"
-        user="root" password="" />
+
 
     <!-- Fetch director's ID using email from session -->
     <sql:query var="directorResult" dataSource="${conexionSI}">
