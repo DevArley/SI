@@ -94,6 +94,20 @@
 </head>
 
  <body>
+ <!-- Fetch director's ID using email from session -->
+<sql:query var="directorResult" dataSource="${conexionSI}">
+    SELECT id FROM usuarios WHERE email = ?
+    <sql:param value="${sessionScope.email}" />
+</sql:query>
+<c:set var="evaluadorId" value="${directorResult.rows[0].id}" scope="session" />
+
+<!-- Query to get projects for the current director -->
+<sql:query var="result"  dataSource="${conexionSI}">
+    SELECT id, titulo, descripcion, url, estado_evaluador, id_estudiante1, id_estudiante2, id_evaluador, fecha_creacion, estado 
+    FROM proyecto
+    WHERE estado_director='calificado' AND  id_evaluador = ?
+    <sql:param value="${evaluadorId}" />
+</sql:query>
                             <header class="header-container">
                                 <div class="logo">
                                     <img class="border-primary" style="border-radius: 50%;" src="../img/S (1).png"
@@ -106,22 +120,6 @@
                                     <a href="../log/logout.jsp" class="btn btn-warning btn-sm logout-btn">Logout</a>
                                 </div>
                             </header>
-
-<!-- Fetch director's ID using email from session -->
-<sql:query var="directorResult" dataSource="${conexionSI}">
-    SELECT id FROM usuarios WHERE email = ?
-    <sql:param value="${sessionScope.email}" />
-</sql:query>
-<c:set var="evaluadorId" value="${directorResult.rows[0].id}" scope="session" />
-
-<!-- Query to get projects for the current director -->
-<sql:query var="result" scope="request" dataSource="${conexionSI}">
-    SELECT id, titulo, descripcion, url, estado_evaluador, id_estudiante1, id_estudiante2, id_evaluador, fecha_creacion, estado 
-    FROM proyecto
-    WHERE estado_director='calificado' AND  id_evaluador = ?
-    <sql:param value="${evaluadorId}" />
-</sql:query>
-
 
     <div class="container-fluid">
         <!-- Menú lateral -->
@@ -190,7 +188,20 @@
         </div>
    
 
+
+
     
+
+                </c:forEach>
+            </tbody>
+        </table>
+                        </div>
+                    </div>
+            </div>
+        </div>
+            </div>
+            </div>
+<c:forEach var="fila" items="${result.rows}">
 <div class="container">
                   <!-- Modal para asignar estado -->
 <div class="modal fade" id="asignarEstadoModal${fila.id}" tabindex="-1" role="dialog" aria-labelledby="asignarEstadoModalLabel${fila.id}" aria-hidden="true">
@@ -218,18 +229,9 @@
                                 </div>
                             </div>
                         </div>
+                    </div></div>
                     </div>
-                </c:forEach>
-            </tbody>
-        </table>
-                        </div>
-                    </div>
-            </div>
-        </div>
-            </div>
-            </div>
-            
-
+                    </c:forEach>
     <footer>
         <div class="contact-info">
             <h4>Contacta con nosotros</h4>
