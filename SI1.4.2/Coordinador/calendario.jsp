@@ -127,6 +127,7 @@
                                         Proyectos</a>
                                     <a href="consultarInformes.jsp"><i class="fas fa-file-alt"></i> Consultar
                                         Informes</a>
+                                    <a href="estudiante.jsp"><i class="fa fa-search"></i> Consultar Estudiante</a>
                                     <a href="formatosGrado.jsp"><i class="fas fa-file-alt"></i> Formatos de Grado</a>
                                     <a href="calendario.jsp"  class="active"><i class="fas fa-calendar"></i> Calendario Académico</a>
                                 </div>
